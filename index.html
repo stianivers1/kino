@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av film</title>
+
+
+    <script type="application/javascript">
+
+        const items = [];
+        function bestill() {
+            const film = document.getElementById('film').value;
+            items.push(film);
+            const antall = document.getElementById('antall').value;
+
+            if (antall == "") {
+                alert("Antall er ikke valgt");
+                return false; }
+
+            items.push(antall);
+            const fornavn = document.getElementById('fornavn').value;
+
+            if (fornavn == "") {
+                alert("Fornavn er ikke skrevet inn");
+                return false; }
+
+            items.push(fornavn);
+            const etternavn = document.getElementById('etternavn').value;
+
+            if (etternavn == "") {
+                alert("Etternavn er ikke skrevet inn");
+                return false; }
+
+            items.push(etternavn);
+            const telefonnr = document.getElementById('telefonnr').value;
+
+            if (telefonnr == "") {
+                alert("Telefonnummer er ikke skrevet inn");
+                return false; }
+            items.push(telefonnr);
+            const epost = document.getElementById('epost').value;
+            if (epost == "") {
+                alert("Epost er ikke skrevet inn");
+                return false; }
+            items.push(epost);
+            console.log(items);
+            document.getElementById("output").innerHTML = items.toString();
+
+        }
+
+        function slett() {
+            document.getElementById("output").outerHTML = "";
+            console.clear();
+        }
+
+    </script>
+
+
+
+
+
+
+</head>
+<body>
+<h3>Velg film:
+    <select id="film">
+        <option>Inception</option>
+        <option>Olsenbanden</option>
+    </select>
+</h3>
+<h3> Antall: <input id="antall">
+</h3>
+<h3> Fornavn: <input id="fornavn">
+</h3>
+<h3> Etternavn: <input id="etternavn">
+</h3>
+<h3> Telefonnr: <input id="telefonnr">
+</h3>
+<h3> Epost: <input id="epost">
+</h3>
+<tr><td><button onclick="bestill()">Bestill</button></td></tr>
+<br> <br>
+<h2> Alle billetter </h2>
+<p id="output"></p>
+<br><br>
+<tr><td><button onclick="slett()">Slett alle billettene</button></td></tr>
+</body>
