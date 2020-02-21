@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av film</title>
+
+
+    <script type="application/javascript">
+
+        const items = [];
+        function bestill() {
+            const film = document.getElementById('film').value;
+            items.push(film);
+            console.log(items);
+            const antall = document.getElementById('antall').value;
+            items.push(antall);
+            console.log(items);
+            const fornavn = document.getElementById('fornavn').value;
+            items.push(fornavn);
+            console.log(items);
+            const etternavn = document.getElementById('etternavn').value;
+            items.push(etternavn);
+            console.log(items);
+            const telefonnr = document.getElementById('telefonnr').value;
+            items.push(telefonnr);
+            console.log(items);
+            const epost = document.getElementById('epost').value;
+            items.push(epost);
+            console.log(items);
+            for (i = 0; i < items.length; i++)
+                document.writeln((i + 1) + ":" + items[i]);
+        }
+
+        function visBestillinger() {
+            for (i = 0; i < items.length; i++)
+                document.writeln((i + 1) + ":" + items[i]);
+        }
+    </script>
+
+
+
+
+
+
+</head>
+<body>
+<h3>Velg film:
+    <select id="film">
+        <option>-</option>
+        <option>Inception</option>
+        <option>Olsenbanden</option>
+    </select>
+</h3>
+<h3> Antall: <input id="antall">
+</h3>
+<h3> Fornavn: <input id="fornavn">
+</h3>
+<h3> Etternavn: <input id="etternavn">
+</h3>
+<h3> Telefonnr: <input id="telefonnr">
+</h3>
+<h3> Epost: <input id="epost">
+</h3>
+<tr><td><button onclick="bestill()">Bestill</button></td></tr>
+<br> <br>
+<h2> Alle billetter </h2>
+<br><br>
+<h1 onload="visBestillinger()"> </h1>
+</body>
